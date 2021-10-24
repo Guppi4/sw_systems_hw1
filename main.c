@@ -1,7 +1,9 @@
 #include<stdio.h>
+#include"NumClass.h"
 
 int main()
 {
-printf("\nA sample C program\n\n");
+int a=isPrime(7);
+printf("%d",a);
 return 0;
-}//yjuykui
+}
