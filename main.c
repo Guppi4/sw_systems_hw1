@@ -3,7 +3,7 @@
 
 int main()
 {
-int a=isPrime(7);
-printf("%d",a);
+int a=isPrime(5);
+printf("%djlklkl\n",a);
 return 0;
 }
