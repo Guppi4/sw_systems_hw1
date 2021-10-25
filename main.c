@@ -5,5 +5,5 @@ int main()
 {
 int a=isPrime(5);
 printf("%djlklkl\n",a);
-return 0;
+return 0;//tru
 }
