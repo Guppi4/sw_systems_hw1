@@ -17,5 +17,29 @@ int isPrime(int p){
  }
     return prime;
   }
-
+int isStrong(int num){
+  int  temp, remaind, sum = 0, i; 
+  long fact;
+  temp=num;
+  int strong=0;
+ while( temp > 0)
+    {
+     fact = 1, i = 1; 
+     remaind = temp % 10;
+     while (i <= remaind)
+     {
+     	fact = fact * i;
+     	i++;
+     }
+     
+     sum = sum + fact;
+     temp = temp /10;
+   }
+  if ( num == sum ){
+        strong=1;
+  }
+return strong;
+}
+  
+  
   

@@ -1,9 +1,9 @@
 CC = gcc
 FLAGS = -Wall -g
 LIBOBJECTS = advancedClassificationLoop.o advancedClassificationRecursion.o basicClassification.o NumClass.hall:mains maindloop maindrec
-all:mains maindloop maindrec  
+all:mains maindloop maindrec mymathd mymaths   
 
-mains: main.o libclassrec.a 
+mains: main.o libclassrec.a   
 		$(CC) $(FLAGS) -o mains main.o libclassrec.a
 
 maindloop: main.o libclassloops.so
@@ -11,6 +11,10 @@ maindloop: main.o libclassloops.so
 
 maindrec: main.o libclassrec.so
 	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so 
+
+mymathd: libclassrec.a libclassloops.a 
+
+mymaths: libclassloops.so libclassrec.so  
 
 libclassrec.a: main.o advancedClassificationRecursion.o basicClassification.o NumClass.h
 	ar -rcs libclassrec.a advancedClassificationRecursion.o basicClassification.o NumClass.h
