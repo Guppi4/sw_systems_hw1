@@ -4,8 +4,8 @@
 
 int ezerArmstrong (int number, int r)
 {
-  static int rem, Sum = 0;
-  
+  static int  Sum = 0;
+  int rem;
   if (number > 0)
    {
      rem = number %10;
@@ -33,7 +33,23 @@ int isArmstrong(int num){
     return ns;
  }
       
-  
+  int isPalindrome(int x){
+int  rev = 0, rema ;
+   int t=0;
+    
+
+    // reversed integer is stored in reversed variable
+    while (x != 0) {
+        rema = x % 10;
+        rev = rev * 10 + rema;
+        x /= 10;
+    }
+  if(rev==x){
+     t=1;
+  }
+ 
+ return t;
+}
    
     
 
