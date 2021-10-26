@@ -33,20 +33,23 @@ int isArmstrong(int num){
     return ns;
  }
       
-  int isPalindrome(int x){
-int  rev = 0, rema ;
+ int  isPalindrome(int x){
+   static int  rev = 0, rema ;
    int t=0;
     
-
-    // reversed integer is stored in reversed variable
-    while (x != 0) {
+ 
+   if(x>0){
         rema = x % 10;
         rev = rev * 10 + rema;
-        x /= 10;
+        isPalindrome(x /10);
+        
     }
+ printf("\n%d+%d\n",rev,x);
   if(rev==x){
-     t=1;
-  }
+       
+      t=1;
+   return t;
+   }
  
  return t;
 }
