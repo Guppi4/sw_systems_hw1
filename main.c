@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include"NumClass.h"
-
+int ezerArmstrong (int number, int r);
 
 int main()
 {
-int a=isArmstrong(407);
+int a=isArmstrong(0);
 int b=isPrime(5);
-int t=isArmstrong(389);
-printf("%d+%d+%d\n",a,b,t);
+
+printf("%d+%d\n",a,b);
 return 0;//tru
 }
