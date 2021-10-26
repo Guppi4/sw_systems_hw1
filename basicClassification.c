@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include"NumClass.h"
 
+
+/* will return if a number is prime*/
 int isPrime(int p){
  
  int i,prime=1;
@@ -17,7 +18,11 @@ int isPrime(int p){
  }
     return prime;
   }
-int isStrong(int num){
+/*Strong number is a special number whose sum of the factorial of digits is equal to the original
+number. For Example: 145 is strong number
+1! + 4! + 5! = 145
+*/
+int isStrong(int num){                        
   int  temp, remaind, sum = 0, i; 
   long fact;
   temp=num;
