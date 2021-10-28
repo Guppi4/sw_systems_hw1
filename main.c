@@ -8,7 +8,7 @@ int m,n,num;
 
 
 scanf("%d%d", &m,&n);
-//int a=isPalindrome(2332);
+//int a=isPalindrome(2332);jk
 //int b=isPalindrome(3033);
 //int c=isArmstrong(555);
 //printf(" %d",a);
