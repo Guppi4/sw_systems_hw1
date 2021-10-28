@@ -1,59 +1,68 @@
 #include<stdio.h>
 #include"NumClass.h"
 #include <math.h>
-
-int ezerArmstrong (int number, int r)
+int reverse(int num)
 {
-  static int  Sum = 0;
-  int rem;
-  if (number > 0)
-   {
-     rem = number %10;
-     Sum = Sum + pow(rem, r);
-     ezerArmstrong (number /10, r);
-     return Sum;
-   }
-   else
-     return 0;
-}
-int isArmstrong(int num){
-  
-    int  ns=0, r =0,t;
-    t = num;
-  while (t!= 0) 
-   {
-     r = r + 1;
-     t = t / 10;
-   } 
-   
-   if(num==ezerArmstrong(num,r)){
-        ns=1;
-    }
+    /* Find number of digits in num */
+    int digit = (int)log10(num);
+    
+    /* Recursion base condition */
+    if(num == 0)
+        return 0;
 
-    return ns;
+    return ((num%10 * pow(10, digit)) + reverse(num/10));
+}
+   
+int check_ArmstrongNumber(int num,int h)
+{
+     if(num>0){
+     int num2=num/10;
+    return (pow(num%10,h)+check_ArmstrongNumber(num2,h));
+     }
+}
+
+int isArmstrong(int num){
+  int count=0;
+   int num2=num;
+   int num3=num;
+     do
+    {
+        
+        count++;
+
+       
+        num2 /= 10;
+    } while(num2 != 0);
+   
+ 
+   if(check_ArmstrongNumber(num3,count)==num)
+    {
+     return 1;
+   
+    }
+    return 0;
+
  }
       
- int  isPalindrome(int x){
-   static int  rev = 0, rema ;
-   int t=0;
-    
- 
-   if(x>0){
-        rema = x % 10;
-        rev = rev * 10 + rema;
-        isPalindrome(x /10);
-        
+ int isPalindrome(int num)
+{
+    /* 
+     * Check if the given number is equal to 
+     * its reverse.
+     */
+    if(num == reverse(num))
+    {
+        return 1;
     }
- printf("\n%d+%d\n",rev,x);
-  if(rev==x){
-       
-      t=1;
-   return t;
-   }
- 
- return t;
+    
+    return 0;
 }
-   
+
+
+/**
+ * Recursive function to find reverse of any number
+ */
+
     
 
   

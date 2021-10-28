@@ -41,7 +41,7 @@ int  rev = 0, rema ;
         rev = rev * 10 + rema;
         x1 /= 10;
     }
- printf("\n%d+%d\n",rev,x);
+
   if(rev==x){
        
       t=1;
