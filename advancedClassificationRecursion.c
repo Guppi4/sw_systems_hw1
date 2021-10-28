@@ -21,7 +21,7 @@ int check_ArmstrongNumber(int num,int h)
      }
 }
 
-int isArmstrong(int num){
+int isArmstrong(int num){//arm
   int count=0;
    int num2=num;
    int num3=num;
