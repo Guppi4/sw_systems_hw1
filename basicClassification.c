@@ -13,9 +13,7 @@ int isPrime(int p){
       break;
     }
   }
-    if(p==1){
-     prime=0;
- }
+    
     return prime;
   }
 /*Strong number is a special number whose sum of the factorial of digits is equal to the original

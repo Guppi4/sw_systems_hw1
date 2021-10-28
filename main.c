@@ -8,12 +8,12 @@ int m,n,num;
 
 
 scanf("%d%d", &m,&n);
-int a=isPalindrome(2332);
-int b=isPalindrome(3033);
-int c=isArmstrong(555);
-printf(" %d",a);
-printf(" %d",b);
-printf(" %d",c);
+//int a=isPalindrome(2332);
+//int b=isPalindrome(3033);
+//int c=isArmstrong(555);
+//printf(" %d",a);
+//printf(" %d",b);
+//printf(" %d",c);
 printf("The Armstrong numbers are:");
 
 for (num = m; num <= n; num++) {
@@ -26,7 +26,7 @@ for (num = m; num <= n; num++) {
 printf("\n");
 printf("The Palindromes are:");
 for (num = m; num <= n; num++) {
-   int y =isPalindrome(num);
+   //int y =isPalindrome(num);
    if(isPalindrome(num)==1){
    printf(" %d",num);
   }

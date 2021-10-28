@@ -19,6 +19,7 @@ int check_ArmstrongNumber(int num,int h)
      int num2=num/10;
     return (pow(num%10,h)+check_ArmstrongNumber(num2,h));
      }
+ return 0;
 }
 
 int isArmstrong(int num){//arm
