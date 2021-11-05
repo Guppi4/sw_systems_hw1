@@ -17,7 +17,7 @@ int check(int num,int h)
 {
      if(num>0){
      int num2=num/10;
-    return (pow(num%10,h)+check_ArmstrongNumber(num2,h));
+    return (pow(num%10,h)+check(num2,h));
      }
  return 0;
 }
