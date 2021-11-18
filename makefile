@@ -1,50 +1,37 @@
 CC = gcc
 FLAGS = -Wall -g
-LIBOBJECTS = advancedClassificationLoop.o advancedClassificationRecursion.o basicClassification.o NumClass.hall:mains maindloop maindrec
-all:mains maindloop maindrec recursives loops recursived loopd    
 
-mains: main.o libclassrec.a  
-		$(CC) $(FLAGS) -o mains main.o libclassrec.a -lm
+all:connections s d    
 
-maindloop: main.o libclassloops.so  
-		$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so -lm
+connections: main.o  libds.a 
+		$(CC) $(FLAGS) -o connections main.o libds.a -lm
 
-maindrec: main.o libclassrec.so 
-	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so -lm 
 
-recursives: libclassrec.a   
+  
 
-loops: libclassloops.a   
+s: libds.a
 
-recursived : libclassrec.so
+d : libdd.so
 
-loopd: libclassloops.so
 
-libclassrec.a: main.o advancedClassificationRecursion.o basicClassification.o NumClass.h
-	ar -rcs libclassrec.a advancedClassificationRecursion.o basicClassification.o NumClass.h
 
-libclassrec.so: advancedClassificationRecursion.o basicClassification.o NumClass.h main.o
-	$(CC) -shared -o libclassrec.so advancedClassificationRecursion.o basicClassification.o NumClass.h
+libds.a: main.o my_mat.o my_mat.h
+	ar -rcs libds.a my_mat.o my_mat.h
 
-libclassloops.a: main.o advancedClassificationLoop.o basicClassification.o NumClass.h
-	ar -rcs libclassloops.a advancedClassificationLoop.o basicClassification.o NumClass.h
+libdd.so:main.o my_mat.h  my_mat.o
+	$(CC) -shared -o libdd.so my_mat.h  my_mat.o
 
-libclassloops.so:advancedClassificationLoop.o basicClassification.o NumClass.h main.o
-	$(CC) -shared -o libclassloops.so advancedClassificationLoop.o basicClassification.o NumClass.h
 
-main.o:main.c NumClass.h
+
+main.o:main.c my_mat.h
 	$(CC) $(FLAGS) -c main.c -lm
 
-advancedClassificationRecursion.o: advancedClassificationRecursion.c
-	$(CC) $(FLAGS)  -c advancedClassificationRecursion.c
 
-advancedClassificationLoop.o: advancedClassificationLoop.c 
-	$(CC) $(FLAGS) -c advancedClassificationLoop.c -lm
 
-basicClassification.o: basicClassification.c
-	$(CC) $(FLAGS) -c basicClassification.c
+my_mat.o: my_mat.c
+	$(CC) $(FLAGS) -c my_mat.c
 
 
 .PHONY:	clean all
 clean:
-	rm -f *.o mains maindloop maindrec libclassrec.a libclassrec.so libclassloops.a libclassloops.so
+	rm -f *.o  connections s d libds.a libdd.so
